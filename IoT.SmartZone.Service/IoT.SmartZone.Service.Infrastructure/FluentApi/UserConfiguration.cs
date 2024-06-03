@@ -1,4 +1,4 @@
-﻿using IoT.SmartZones.Domain.Entities;
+﻿using IoT.SmartZone.Service.Domain.Entities;   
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -7,11 +7,6 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
 {
     public void Configure(EntityTypeBuilder<User> builder)
     {
-        builder.HasKey(x => x.Id);
-
-        builder.HasIndex(x => x.ExternalId);
-        builder.Property(x => x.ExternalId).HasDefaultValueSql("NEWID()");
-
         builder.Property(x => x.Name)
             .IsRequired()
             .HasMaxLength(UserConstraints.NameLength);
@@ -23,6 +18,9 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.Property(x => x.Email)
             .IsRequired()
             .HasMaxLength(UserConstraints.EmailLength);
+        
+        builder.HasMany(x => x.OrganizationMembership)
+            .WithOne(x => x.User);
     }
 }
 

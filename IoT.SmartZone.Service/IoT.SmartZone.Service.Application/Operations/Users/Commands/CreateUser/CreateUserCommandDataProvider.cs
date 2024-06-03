@@ -1,5 +1,5 @@
 ﻿using IoT.SmartZone.Service.Infrastructure;
-using IoT.SmartZones.Domain.Entities;
+using IoT.SmartZone.Service.Domain.Entities;
 
 namespace IoT.SmartZone.Service.Application.Operations.Users.Commands.CreateUser;
 

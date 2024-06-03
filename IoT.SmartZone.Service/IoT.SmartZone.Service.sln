@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Appli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Infrastructure", "IoT.SmartZone.Service.Infrastructure\IoT.SmartZone.Service.Infrastructure.csproj", "{3E71332F-B0F5-41D1-BE50-C3D93671327C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.UnitTests", "IoT.SmartZone.Service.UnitTests\IoT.SmartZone.Service.UnitTests.csproj", "{2B4BB572-4889-4FB3-8A44-0700534F1326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Domain", "IoT.SmartZone.Service.Domain\IoT.SmartZone.Service.Domain.csproj", "{BC82FECA-B7B4-4D8E-8BD2-2F2550E1BA0C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZones.Service.Domain", "IoT.SmartZones.Service.Domain\IoT.SmartZones.Service.Domain.csproj", "{E933DC11-1170-49B0-B8F3-24E08F7C56C4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{94129528-4AF9-41F3-A735-0846C0695091}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.UnitTests", "Tests\IoT.SmartZone.Service.UnitTests\IoT.SmartZone.Service.UnitTests.csproj", "{55BD04A2-FECA-4A56-B694-AEAEC800B485}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,17 +33,20 @@ Global
 		{3E71332F-B0F5-41D1-BE50-C3D93671327C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E71332F-B0F5-41D1-BE50-C3D93671327C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E71332F-B0F5-41D1-BE50-C3D93671327C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B4BB572-4889-4FB3-8A44-0700534F1326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B4BB572-4889-4FB3-8A44-0700534F1326}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B4BB572-4889-4FB3-8A44-0700534F1326}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B4BB572-4889-4FB3-8A44-0700534F1326}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E933DC11-1170-49B0-B8F3-24E08F7C56C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E933DC11-1170-49B0-B8F3-24E08F7C56C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E933DC11-1170-49B0-B8F3-24E08F7C56C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E933DC11-1170-49B0-B8F3-24E08F7C56C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC82FECA-B7B4-4D8E-8BD2-2F2550E1BA0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC82FECA-B7B4-4D8E-8BD2-2F2550E1BA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC82FECA-B7B4-4D8E-8BD2-2F2550E1BA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC82FECA-B7B4-4D8E-8BD2-2F2550E1BA0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{55BD04A2-FECA-4A56-B694-AEAEC800B485} = {94129528-4AF9-41F3-A735-0846C0695091}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9BC18D0-2D5A-413D-9073-CAF1D7372471}

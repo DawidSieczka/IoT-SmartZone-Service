@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IoT.SmartZones.Domain.Entities.Common;
+namespace IoT.SmartZone.Service.Domain.Entities.Common;
 
 public class BaseEntity
 {

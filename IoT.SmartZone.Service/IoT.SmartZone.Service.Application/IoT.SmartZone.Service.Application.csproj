@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IoT.SmartZone.Service.Domain\IoT.SmartZone.Service.Domain.csproj" />
     <ProjectReference Include="..\IoT.SmartZone.Service.Infrastructure\IoT.SmartZone.Service.Infrastructure.csproj" />
   </ItemGroup>
 

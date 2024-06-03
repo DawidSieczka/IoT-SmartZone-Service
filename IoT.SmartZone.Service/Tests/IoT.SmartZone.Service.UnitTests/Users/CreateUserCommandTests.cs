@@ -1,6 +1,5 @@
 using FluentAssertions;
 using IoT.SmartZone.Service.Application.Operations.Users.Commands.CreateUser;
-using IoT.SmartZone.Service.Application.Operations.Users.Commands.Responses;
 using NSubstitute;
 
 namespace IoT.SmartZone.Service.UnitTests.Users;
@@ -25,7 +24,7 @@ public class CreateUserCommandTests
             Email = "John@Smith.com"
         };
 
-        var expectedUserEntityResult = new SmartZones.Domain.Entities.User()
+        var expectedUserEntityResult = new SmartZone.Service.Domain.Entities.User()
         {
             Name = command.Name,
             LastName = command.LastName,

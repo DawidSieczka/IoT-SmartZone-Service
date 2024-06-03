@@ -20,9 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IoT.SmartZone.Service.Application\IoT.SmartZone.Service.Application.csproj" />
-    <ProjectReference Include="..\IoT.SmartZones.Service.Domain\IoT.SmartZones.Service.Domain.csproj" />
+    <ProjectReference Include="..\..\IoT.SmartZone.Service.Application\IoT.SmartZone.Service.Application.csproj" />
+    <ProjectReference Include="..\..\IoT.SmartZone.Service.Domain\IoT.SmartZone.Service.Domain.csproj" />
   </ItemGroup>
+
 
   <ItemGroup>
     <Using Include="NUnit.Framework" />

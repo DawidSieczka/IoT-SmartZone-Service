@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\IoT.SmartZone.Service.Domain\IoT.SmartZone.Service.Domain.csproj" />
     <ProjectReference Include="..\IoT.SmartZones.Domain\IoT.SmartZones.Domain.csproj" />
-    <ProjectReference Include="..\IoT.SmartZones.Service.Domain\IoT.SmartZones.Service.Domain.csproj" />
   </ItemGroup>
 
 </Project>
