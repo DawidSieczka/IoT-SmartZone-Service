@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using IoT.SmartZone.Service.Shared.Abstractions.Modules;
 using IoT.SmartZone.Service.Shared.Infrastucture.Contexts;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Modular.Abstractions.Modules;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Dispatchers;
 

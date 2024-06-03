@@ -1,8 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using IoT.SmartZone.Service.Shared.Abstractions.Auth;
+using IoT.SmartZone.Service.Shared.Abstractions.Modules;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization.Policy;
@@ -11,22 +9,20 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using Modular.Abstractions.Auth;
-using Modular.Abstractions.Modules;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Auth;
 
 public static class Extensions
 {
-    private const string SectionName = "auth";
-    private const string AccessTokenCookieName = "__access-token";
-    private const string AuthorizationHeader = "authorization";
+    private const string _sectionName = "auth";
+    private const string _accessTokenCookieName = "__access-token";
+    private const string _authorizationHeader = "authorization";
 
     public static IServiceCollection AddAuth(this IServiceCollection services, IConfiguration configuration,
         IEnumerable<IModule> modules = null, Action<JwtBearerOptions> optionsFactory = null)
     {
-        var authSection = configuration.GetSection(SectionName);
-        var cookieSection = configuration.GetSection($"{SectionName}:cookie");
+        var authSection = configuration.GetSection(_sectionName);
+        var cookieSection = configuration.GetSection($"{_sectionName}:cookie");
         var options = authSection.GetOptions<AuthOptions>();
         services.Configure<AuthOptions>(authSection);
         services.Configure<AuthOptions.CookieOptions>(cookieSection);
@@ -118,7 +114,7 @@ public static class Extensions
                 {
                     OnMessageReceived = context =>
                     {
-                        if (context.Request.Cookies.TryGetValue(AccessTokenCookieName, out var token))
+                        if (context.Request.Cookies.TryGetValue(_accessTokenCookieName, out var token))
                         {
                             context.Token = token;
                         }
@@ -150,12 +146,12 @@ public static class Extensions
         app.UseAuthentication();
         app.Use(async (ctx, next) =>
         {
-            if (ctx.Request.Headers.ContainsKey(AuthorizationHeader))
+            if (ctx.Request.Headers.ContainsKey(_authorizationHeader))
             {
-                ctx.Request.Headers.Remove(AuthorizationHeader);
+                ctx.Request.Headers.Remove(_authorizationHeader);
             }
 
-            if (ctx.Request.Cookies.ContainsKey(AccessTokenCookieName))
+            if (ctx.Request.Cookies.ContainsKey(_accessTokenCookieName))
             {
                 var authenticateResult = await ctx.AuthenticateAsync(JwtBearerDefaults.AuthenticationScheme);
                 if (authenticateResult.Succeeded)

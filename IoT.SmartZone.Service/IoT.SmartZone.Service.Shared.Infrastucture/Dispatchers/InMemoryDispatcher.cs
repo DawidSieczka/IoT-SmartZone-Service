@@ -1,9 +1,9 @@
 using System.Threading;
 using System.Threading.Tasks;
-using Modular.Abstractions.Commands;
-using Modular.Abstractions.Dispatchers;
-using Modular.Abstractions.Events;
-using Modular.Abstractions.Queries;
+using IoT.SmartZone.Service.Shared.Abstractions.Commands;
+using IoT.SmartZone.Service.Shared.Abstractions.Dispatchers;
+using IoT.SmartZone.Service.Shared.Abstractions.Events;
+using IoT.SmartZone.Service.Shared.Abstractions.Queries;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Dispatchers;
 

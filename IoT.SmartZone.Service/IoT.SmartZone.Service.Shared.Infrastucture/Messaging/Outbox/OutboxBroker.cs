@@ -1,8 +1,6 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using IoT.SmartZone.Service.Shared.Abstractions.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Modular.Abstractions.Messaging;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Outbox;
 

@@ -3,15 +3,14 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
+using IoT.SmartZone.Service.Shared.Abstractions.Contexts;
+using IoT.SmartZone.Service.Shared.Abstractions.Messaging;
+using IoT.SmartZone.Service.Shared.Abstractions.Modules;
 using IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Contexts;
 using IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Dispatchers;
 using IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Outbox;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Modular.Abstractions.Contexts;
-using Modular.Abstractions.Messaging;
-using Modular.Abstractions.Modules;
-using Modular.Infrastructure.Messaging.Contexts;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Brokers;
 

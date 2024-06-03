@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
-using Modular.Abstractions.Contexts;
+using IoT.SmartZone.Service.Shared.Abstractions.Contexts;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Contexts;
 

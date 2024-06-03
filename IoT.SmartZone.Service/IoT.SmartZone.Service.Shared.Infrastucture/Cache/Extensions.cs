@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Modular.Infrastructure;
 using StackExchange.Redis;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Cache;

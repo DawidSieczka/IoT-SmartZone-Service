@@ -1,18 +1,15 @@
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using IoT.SmartZone.Service.Shared.Abstractions.Auth;
+using IoT.SmartZone.Service.Shared.Abstractions.Time;
 using Microsoft.IdentityModel.Tokens;
-using Modular.Abstractions.Auth;
-using Modular.Abstractions.Time;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Auth;
 
 public sealed class AuthManager : IAuthManager
 {
-    private static readonly Dictionary<string, IEnumerable<string>> EmptyClaims = new();
+    private static readonly Dictionary<string, IEnumerable<string>> _emptyClaims = new();
     private readonly AuthOptions _options;
     private readonly IClock _clock;
     private readonly SigningCredentials _signingCredentials;
@@ -82,7 +79,7 @@ public sealed class AuthManager : IAuthManager
             Expiry = new DateTimeOffset(expires).ToUnixTimeMilliseconds(),
             UserId = userId,
             Role = role ?? string.Empty,
-            Claims = claims ?? EmptyClaims
+            Claims = claims ?? _emptyClaims
         };
     }
 }

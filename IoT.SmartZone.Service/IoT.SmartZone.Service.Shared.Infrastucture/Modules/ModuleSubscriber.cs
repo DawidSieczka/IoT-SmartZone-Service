@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using IoT.SmartZone.Service.Shared.Abstractions.Modules;
 using Microsoft.Extensions.DependencyInjection;
-using Modular.Abstractions.Modules;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Modules;
 

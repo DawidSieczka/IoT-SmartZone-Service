@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,21 +5,20 @@ using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 using Serilog.Filters;
-using Modular.Abstractions.Commands;
-using Modular.Abstractions.Contexts;
-using Modular.Abstractions.Events;
-using Modular.Abstractions.Queries;
-using Modular.Infrastructure.Logging.Options;
-using IoT.SmartZone.Service.Shared.Infrastucture;
 using IoT.SmartZone.Service.Shared.Infrastucture.Logging.Decorators;
+using IoT.SmartZone.Service.Shared.Abstractions.Commands;
+using IoT.SmartZone.Service.Shared.Abstractions.Events;
+using IoT.SmartZone.Service.Shared.Abstractions.Queries;
+using IoT.SmartZone.Service.Shared.Abstractions.Contexts;
+using IoT.SmartZone.Service.Shared.Infrastucture.Logging.Options;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Logging;
 
 public static class Extensions
 {
-    private const string ConsoleOutputTemplate = "{Timestamp:HH:mm:ss} [{Level:u3}] {Message}{NewLine}{Exception}";
-    private const string FileOutputTemplate = "{Timestamp:HH:mm:ss} [{Level:u3}] ({SourceContext}.{Method}) {Message}{NewLine}{Exception}";
-    private const string LoggerSectionName = "logger";
+    private const string _consoleOutputTemplate = "{Timestamp:HH:mm:ss} [{Level:u3}] {Message}{NewLine}{Exception}";
+    private const string _fileOutputTemplate = "{Timestamp:HH:mm:ss} [{Level:u3}] ({SourceContext}.{Method}) {Message}{NewLine}{Exception}";
+    private const string _loggerSectionName = "logger";
 
     public static IServiceCollection AddLoggingDecorators(this IServiceCollection services)
     {
@@ -52,12 +48,12 @@ public static class Extensions
     }
 
     public static IHostBuilder UseLogging(this IHostBuilder builder, Action<LoggerConfiguration> configure = null,
-        string loggerSectionName = LoggerSectionName)
+        string loggerSectionName = _loggerSectionName)
         => builder.UseSerilog((context, loggerConfiguration) =>
         {
             if (string.IsNullOrWhiteSpace(loggerSectionName))
             {
-                loggerSectionName = LoggerSectionName;
+                loggerSectionName = _loggerSectionName;
             }
 
             var appOptions = context.Configuration.GetAppOptions();
@@ -102,12 +98,12 @@ public static class Extensions
     private static void Configure(LoggerConfiguration loggerConfiguration, LoggerOptions options)
     {
         var consoleOptions = options.Console ?? new ConsoleOptions();
-        var fileOptions = options.File ?? new FileOptions();
+        var fileOptions = options.File ?? new Options.FileOptions();
         var seqOptions = options.Seq ?? new SeqOptions();
 
         if (consoleOptions.Enabled)
         {
-            loggerConfiguration.WriteTo.Console(outputTemplate: ConsoleOutputTemplate);
+            loggerConfiguration.WriteTo.Console(outputTemplate: _consoleOutputTemplate);
         }
 
         if (fileOptions.Enabled)
@@ -118,7 +114,7 @@ public static class Extensions
                 interval = RollingInterval.Day;
             }
 
-            loggerConfiguration.WriteTo.File(path, rollingInterval: interval, outputTemplate: FileOutputTemplate);
+            loggerConfiguration.WriteTo.File(path, rollingInterval: interval, outputTemplate: _fileOutputTemplate);
         }
 
         if (seqOptions.Enabled)

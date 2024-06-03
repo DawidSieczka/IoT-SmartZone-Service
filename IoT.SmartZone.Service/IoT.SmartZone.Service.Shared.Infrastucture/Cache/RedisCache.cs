@@ -9,7 +9,7 @@ namespace IoT.SmartZone.Service.Shared.Infrastucture.Cache;
 
 public sealed class RedisCache : ICache
 {
-    private static readonly HashSet<Type> PrimitiveTypes = new()
+    private static readonly HashSet<Type> _primitiveTypes = new()
     {
         typeof(string),
         typeof(char),
@@ -78,5 +78,5 @@ public sealed class RedisCache : ICache
         => _database.SetContainsAsync(key, AsString(value));
 
     private string AsString<T>(T value)
-        => PrimitiveTypes.Contains(typeof(T)) ? value.ToString() : _jsonSerializer.Serialize(value);
+        => _primitiveTypes.Contains(typeof(T)) ? value.ToString() : _jsonSerializer.Serialize(value);
 }

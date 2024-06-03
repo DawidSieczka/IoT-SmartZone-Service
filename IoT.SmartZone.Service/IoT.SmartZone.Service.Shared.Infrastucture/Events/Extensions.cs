@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+using IoT.SmartZone.Service.Shared.Abstractions.Events;
 using IoT.SmartZone.Service.Shared.Infrastucture;
 using Microsoft.Extensions.DependencyInjection;
-using Modular.Abstractions.Events;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Events;
 

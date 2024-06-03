@@ -3,11 +3,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using IoT.SmartZone.Service.Shared.Abstractions.Time;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Modular.Abstractions.Time;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Outbox;
 

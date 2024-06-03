@@ -2,10 +2,10 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
+using IoT.SmartZone.Service.Shared.Abstractions.Events;
 using IoT.SmartZone.Service.Shared.Infrastucture.Postgres;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Modular.Abstractions.Events;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Postgres.Decorators;
 

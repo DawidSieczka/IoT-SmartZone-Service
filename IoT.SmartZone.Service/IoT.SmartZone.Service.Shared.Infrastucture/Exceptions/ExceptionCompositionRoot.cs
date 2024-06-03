@@ -1,7 +1,5 @@
-﻿using System;
-using System.Linq;
+﻿using IoT.SmartZone.Service.Shared.Abstractions.Exceptions;
 using Microsoft.Extensions.DependencyInjection;
-using Modular.Abstractions.Exceptions;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Exceptions;
 
@@ -32,4 +30,5 @@ public class ExceptionCompositionRoot : IExceptionCompositionRoot
 
         return defaultMapper?.Map(exception);
     }
+
 }

@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Reflection;
+﻿using System.Reflection;
+using IoT.SmartZone.Service.Shared.Abstractions.Modules;
 using Microsoft.Extensions.Configuration;
-using Modular.Abstractions.Modules;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Modules;
 

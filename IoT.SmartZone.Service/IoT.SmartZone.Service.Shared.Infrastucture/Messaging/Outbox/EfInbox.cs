@@ -1,10 +1,10 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using IoT.SmartZone.Service.Shared.Abstractions.Time;
 using IoT.SmartZone.Service.Shared.Infrastucture;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Modular.Abstractions.Time;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Outbox;
 

@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Modular.Abstractions.Queries;
+using IoT.SmartZone.Service.Shared.Abstractions.Queries;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Queries.Decorators;
 

@@ -1,5 +1,5 @@
 ﻿using System;
-using Modular.Abstractions.Exceptions;
+using IoT.SmartZone.Service.Shared.Abstractions.Exceptions;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Exceptions;
 

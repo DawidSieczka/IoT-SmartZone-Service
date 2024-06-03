@@ -1,18 +1,17 @@
-﻿using System.Threading;
-using Modular.Abstractions.Contexts;
+﻿using IoT.SmartZone.Service.Shared.Abstractions.Contexts;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Contexts;
 
 public sealed class ContextAccessor
 {
-    private static readonly AsyncLocal<ContextHolder> Holder = new();
+    private static readonly AsyncLocal<ContextHolder> _holder = new();
 
     public IContext Context
     {
-        get => Holder.Value?.Context;
+        get => _holder.Value?.Context;
         set
         {
-            var holder = Holder.Value;
+            var holder = _holder.Value;
             if (holder != null)
             {
                 holder.Context = null;
@@ -20,7 +19,7 @@ public sealed class ContextAccessor
 
             if (value != null)
             {
-                Holder.Value = new ContextHolder { Context = value };
+                _holder.Value = new ContextHolder { Context = value };
             }
         }
     }

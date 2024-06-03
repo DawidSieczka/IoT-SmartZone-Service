@@ -1,8 +1,8 @@
 ﻿using System;
+using IoT.SmartZone.Service.Shared.Abstractions.Contexts;
 using IoT.SmartZone.Service.Shared.Infrastucture;
 using IoT.SmartZone.Service.Shared.Infrastucture.Api;
 using Microsoft.AspNetCore.Http;
-using Modular.Abstractions.Contexts;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Contexts;
 
@@ -21,7 +21,7 @@ public class Context : IContext
 
     public Context(HttpContext context) : this(context.TryGetCorrelationId(), context.TraceIdentifier,
         new IdentityContext(context.User), context.GetUserIpAddress(),
-        context.Request.Headers["user-agent"])
+        context.Request.Headers.UserAgent)
     {
     }
 

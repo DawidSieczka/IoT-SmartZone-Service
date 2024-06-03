@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using IoT.SmartZone.Service.Shared.Infrastucture;
-using IoT.SmartZone.Service.Shared.Infrastucture.Postgres;
+﻿using IoT.SmartZone.Service.Shared.Abstractions.Commands;
+using IoT.SmartZone.Service.Shared.Abstractions.Events;
+using IoT.SmartZone.Service.Shared.Abstractions.Queries;
 using IoT.SmartZone.Service.Shared.Infrastucture.Postgres.Decorators;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Modular.Abstractions.Commands;
-using Modular.Abstractions.Events;
-using Modular.Abstractions.Queries;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Postgres;
 

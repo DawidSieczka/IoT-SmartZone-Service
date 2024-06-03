@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using IoT.SmartZone.Service.Shared.Abstractions.Exceptions;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Modular.Abstractions.Exceptions;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Exceptions;
 

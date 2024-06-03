@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Caching.Memory;
-using Modular.Abstractions.Messaging;
+﻿using IoT.SmartZone.Service.Shared.Abstractions.Messaging;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Contexts;
 

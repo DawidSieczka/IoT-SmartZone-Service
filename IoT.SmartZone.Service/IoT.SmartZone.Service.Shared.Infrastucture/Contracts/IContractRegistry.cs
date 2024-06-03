@@ -1,6 +1,5 @@
-using System.Collections.Generic;
 using System.Reflection;
-using Modular.Abstractions.Contracts;
+using IoT.SmartZone.Service.Shared.Abstractions.Contracts;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Contracts;
 

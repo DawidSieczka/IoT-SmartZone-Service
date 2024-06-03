@@ -1,12 +1,8 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Humanizer;
-using IoT.SmartZone.Service.Shared.Infrastucture;
+using IoT.SmartZone.Service.Shared.Abstractions.Commands;
+using IoT.SmartZone.Service.Shared.Abstractions.Contexts;
+using IoT.SmartZone.Service.Shared.Abstractions.Messaging;
 using Microsoft.Extensions.Logging;
-using Modular.Abstractions.Commands;
-using Modular.Abstractions.Contexts;
-using Modular.Abstractions.Messaging;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Logging.Decorators;
 

@@ -1,12 +1,8 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Humanizer;
+using IoT.SmartZone.Service.Shared.Abstractions.Events;
+using IoT.SmartZone.Service.Shared.Abstractions.Messaging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Modular.Abstractions.Events;
-using Modular.Abstractions.Messaging;
-using Modular.Infrastructure;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Outbox;
 

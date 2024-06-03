@@ -1,4 +1,8 @@
-﻿using System.Reflection;
+﻿using IoT.SmartZone.Service.Shared.Abstractions.Modules;
+using IoT.SmartZone.Service.Shared.Infrastucture.Modules;
+using IoT.SmartZone.Service.Shared.Infrastucture;
+using IoT.SmartZone.Service.Shared.Infrastucture.Contracts;
+using System.Reflection;
 
 namespace IoT.SmartZone.Service.Bootsrapper;
 
@@ -6,16 +10,18 @@ public class Startup
 {
     private readonly IList<Assembly> _assemblies;
     private readonly IList<IModule> _modules;
+    private readonly IConfiguration _configuration;
 
     public Startup(IConfiguration configuration)
     {
         _assemblies = ModuleLoader.LoadAssemblies(configuration, "IoT.SmartZone.Service.Modules.");
         _modules = ModuleLoader.LoadModules(_assemblies);
+        _configuration = configuration;
     }
 
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddModularInfrastructure(_assemblies, _modules);
+        services.AddModularInfrastructure(_configuration, _assemblies, _modules);
         foreach (var module in _modules)
         {
             module.Register(services);

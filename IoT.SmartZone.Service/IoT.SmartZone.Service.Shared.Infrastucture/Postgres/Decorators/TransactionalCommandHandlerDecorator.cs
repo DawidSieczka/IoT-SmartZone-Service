@@ -1,11 +1,7 @@
-using System;
-using System.Threading;
-using System.Threading.Tasks;
 using Humanizer;
-using IoT.SmartZone.Service.Shared.Infrastucture.Postgres;
+using IoT.SmartZone.Service.Shared.Abstractions.Commands;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Modular.Abstractions.Commands;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Postgres.Decorators;
 

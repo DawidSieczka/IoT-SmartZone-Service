@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Humanizer;
+using IoT.SmartZone.Service.Shared.Abstractions.Exceptions;
+using System;
 using System.Collections.Concurrent;
 using System.Net;
-using Humanizer;
-using Modular.Abstractions.Exceptions;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Exceptions;
 
 public class ExceptionToResponseMapper : IExceptionToResponseMapper
 {
-    private static readonly ConcurrentDictionary<Type, string> Codes = new();
+    private static readonly ConcurrentDictionary<Type, string> _codes = new();
 
     public ExceptionResponse Map(Exception exception)
         => exception switch
@@ -26,6 +26,6 @@ public class ExceptionToResponseMapper : IExceptionToResponseMapper
     private static string GetErrorCode(object exception)
     {
         var type = exception.GetType();
-        return Codes.GetOrAdd(type, type.Name.Underscore().Replace("_exception", string.Empty));
+        return _codes.GetOrAdd(type, type.Name.Underscore().Replace("_exception", string.Empty));
     }
 }

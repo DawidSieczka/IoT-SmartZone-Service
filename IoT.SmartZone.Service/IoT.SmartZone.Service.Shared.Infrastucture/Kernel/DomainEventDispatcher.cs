@@ -2,8 +2,8 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using IoT.SmartZone.Service.Shared.Abstractions.Kernel;
 using Microsoft.Extensions.DependencyInjection;
-using Modular.Abstractions.Kernel;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Kernel;
 

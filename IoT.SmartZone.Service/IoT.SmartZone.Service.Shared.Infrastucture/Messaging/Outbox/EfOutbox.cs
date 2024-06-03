@@ -1,19 +1,15 @@
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Humanizer;
+using IoT.SmartZone.Service.Shared.Abstractions.Messaging;
+using IoT.SmartZone.Service.Shared.Abstractions.Modules;
+using IoT.SmartZone.Service.Shared.Abstractions.Time;
 using IoT.SmartZone.Service.Shared.Infrastucture;
+using IoT.SmartZone.Service.Shared.Infrastucture.Contexts;
 using IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Contexts;
 using IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Dispatchers;
 using IoT.SmartZone.Service.Shared.Infrastucture.Serialization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Modular.Abstractions.Messaging;
-using Modular.Abstractions.Modules;
-using Modular.Abstractions.Time;
-using Modular.Infrastructure.Contexts;
-using Modular.Infrastructure.Messaging.Contexts;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Outbox;
 

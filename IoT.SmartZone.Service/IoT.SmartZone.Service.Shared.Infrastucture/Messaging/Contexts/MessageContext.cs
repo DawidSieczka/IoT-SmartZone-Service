@@ -1,6 +1,6 @@
 ﻿using System;
-using Modular.Abstractions.Contexts;
-using Modular.Abstractions.Messaging;
+using IoT.SmartZone.Service.Shared.Abstractions.Contexts;
+using IoT.SmartZone.Service.Shared.Abstractions.Messaging;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Contexts;
 

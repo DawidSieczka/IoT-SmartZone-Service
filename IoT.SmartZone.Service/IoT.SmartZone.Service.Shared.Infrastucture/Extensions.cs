@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using IoT.SmartZone.Service.Shared.Infrastucture;
+﻿using System.Reflection;
+using IoT.SmartZone.Service.Shared.Abstractions;
+using IoT.SmartZone.Service.Shared.Abstractions.Dispatchers;
+using IoT.SmartZone.Service.Shared.Abstractions.Modules;
+using IoT.SmartZone.Service.Shared.Abstractions.Storage;
+using IoT.SmartZone.Service.Shared.Abstractions.Time;
 using IoT.SmartZone.Service.Shared.Infrastucture.Api;
 using IoT.SmartZone.Service.Shared.Infrastucture.Auth;
 using IoT.SmartZone.Service.Shared.Infrastucture.Commands;
@@ -26,22 +27,36 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Modular.Abstractions;
-using Modular.Abstractions.Dispatchers;
-using Modular.Abstractions.Modules;
-using Modular.Abstractions.Storage;
-using Modular.Abstractions.Time;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture;
 
 public static class Extensions
 {
-    private const string AppSectionName = "app";
-    private const string CorrelationIdKey = "correlation-id";
+    private const string _appSectionName = "app";
+    private const string _correlationIdKey = "correlation-id";
 
     public static IServiceCollection AddInitializer<T>(this IServiceCollection services) where T : class, IInitializer
         => services.AddTransient<IInitializer, T>();
+
+    public static IHostBuilder ConfigureModules(this IHostBuilder builder)
+            => builder.ConfigureAppConfiguration((ctx, cfg) =>
+            {
+                foreach (var settings in GetSettings("*"))
+                {
+                    cfg.AddJsonFile(settings);
+                }
+
+                foreach (var settings in GetSettings($"*.{ctx.HostingEnvironment.EnvironmentName}"))
+                {
+                    cfg.AddJsonFile(settings);
+                }
+
+                IEnumerable<string> GetSettings(string pattern)
+                    => Directory.EnumerateFiles(ctx.HostingEnvironment.ContentRootPath,
+                        $"module.{pattern}.json", SearchOption.AllDirectories);
+            });
 
     public static IServiceCollection AddModularInfrastructure(this IServiceCollection services,
         IConfiguration configuration, IList<Assembly> assemblies, IList<IModule> modules)
@@ -72,7 +87,7 @@ public static class Extensions
             });
         });
 
-        var appOptionsSection = configuration.GetSection(AppSectionName);
+        var appOptionsSection = configuration.GetSection(_appSectionName);
         services.Configure<AppOptions>(appOptionsSection);
 
         var appOptions = configuration.GetAppOptions();
@@ -146,7 +161,7 @@ public static class Extensions
     }
 
     public static AppOptions GetAppOptions(this IConfiguration configuration)
-        => configuration.GetOptions<AppOptions>(AppSectionName);
+        => configuration.GetOptions<AppOptions>(_appSectionName);
 
     public static T GetOptions<T>(this IConfiguration configuration, string sectionName) where T : new()
         => configuration.GetSection(sectionName).GetOptions<T>();
@@ -176,10 +191,10 @@ public static class Extensions
     public static IApplicationBuilder UseCorrelationId(this IApplicationBuilder app)
         => app.Use((ctx, next) =>
         {
-            ctx.Items.Add(CorrelationIdKey, Guid.NewGuid());
+            ctx.Items.Add(_correlationIdKey, Guid.NewGuid());
             return next();
         });
 
     public static Guid? TryGetCorrelationId(this HttpContext context)
-        => context.Items.TryGetValue(CorrelationIdKey, out var id) ? (Guid)id : null;
+        => context.Items.TryGetValue(_correlationIdKey, out var id) ? (Guid)id : null;
 }

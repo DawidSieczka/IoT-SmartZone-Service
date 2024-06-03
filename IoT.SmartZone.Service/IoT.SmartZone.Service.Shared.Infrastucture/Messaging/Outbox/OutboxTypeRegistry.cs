@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using IoT.SmartZone.Service.Shared.Infrastucture;
-using Modular.Abstractions.Messaging;
+﻿using IoT.SmartZone.Service.Shared.Abstractions.Messaging;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Outbox;
 

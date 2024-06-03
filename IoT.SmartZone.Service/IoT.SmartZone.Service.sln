@@ -15,6 +15,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{94129528
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.UnitTests", "Tests\IoT.SmartZone.Service.UnitTests\IoT.SmartZone.Service.UnitTests.csproj", "{55BD04A2-FECA-4A56-B694-AEAEC800B485}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstraper", "Bootstraper", "{973562BE-6AF6-4B6E-851E-BE7FFB24BFAB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.SmartZone.Service.Bootsrapper", "IoT.SmartZone.Service.Bootsrapper\IoT.SmartZone.Service.Bootsrapper.csproj", "{08D3EDB7-02BD-4309-BA03-1EB4CF598156}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4B20C550-738D-4153-A97D-1AEC630D20D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.SmartZone.Service.Shared.Abstractions", "IoT.SmartZone.Service.Shared.Abstractions\IoT.SmartZone.Service.Shared.Abstractions.csproj", "{15CABCC9-85D9-486F-B612-08FB008E2940}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.SmartZone.Service.Shared.Infrastucture", "IoT.SmartZone.Service.Shared.Infrastucture\IoT.SmartZone.Service.Shared.Infrastucture.csproj", "{CA7119BC-2CD3-41FC-9E43-9522C0A4F092}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,12 +51,27 @@ Global
 		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08D3EDB7-02BD-4309-BA03-1EB4CF598156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08D3EDB7-02BD-4309-BA03-1EB4CF598156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08D3EDB7-02BD-4309-BA03-1EB4CF598156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08D3EDB7-02BD-4309-BA03-1EB4CF598156}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15CABCC9-85D9-486F-B612-08FB008E2940}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15CABCC9-85D9-486F-B612-08FB008E2940}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15CABCC9-85D9-486F-B612-08FB008E2940}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15CABCC9-85D9-486F-B612-08FB008E2940}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA7119BC-2CD3-41FC-9E43-9522C0A4F092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA7119BC-2CD3-41FC-9E43-9522C0A4F092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA7119BC-2CD3-41FC-9E43-9522C0A4F092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA7119BC-2CD3-41FC-9E43-9522C0A4F092}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{55BD04A2-FECA-4A56-B694-AEAEC800B485} = {94129528-4AF9-41F3-A735-0846C0695091}
+		{08D3EDB7-02BD-4309-BA03-1EB4CF598156} = {973562BE-6AF6-4B6E-851E-BE7FFB24BFAB}
+		{15CABCC9-85D9-486F-B612-08FB008E2940} = {4B20C550-738D-4153-A97D-1AEC630D20D2}
+		{CA7119BC-2CD3-41FC-9E43-9522C0A4F092} = {4B20C550-738D-4153-A97D-1AEC630D20D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9BC18D0-2D5A-413D-9073-CAF1D7372471}

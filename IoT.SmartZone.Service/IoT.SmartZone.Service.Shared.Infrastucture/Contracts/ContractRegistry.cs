@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization;
+using IoT.SmartZone.Service.Shared.Abstractions.Contracts;
+using IoT.SmartZone.Service.Shared.Abstractions.Messaging;
 using IoT.SmartZone.Service.Shared.Infrastucture.Modules;
 using Microsoft.Extensions.Logging;
-using Modular.Abstractions.Contracts;
-using Modular.Abstractions.Messaging;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Contracts;
 

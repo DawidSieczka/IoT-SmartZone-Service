@@ -1,5 +1,4 @@
-﻿using System;
-using Modular.Abstractions.Time;
+﻿using IoT.SmartZone.Service.Shared.Abstractions.Time;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Time;
 

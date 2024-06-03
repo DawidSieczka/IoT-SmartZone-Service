@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Concurrent;
 using System.Reflection;
-using System.Threading;
-using System.Threading.Tasks;
-using IoT.SmartZone.Service.Shared.Infrastucture;
+using IoT.SmartZone.Service.Shared.Abstractions.Commands;
+using IoT.SmartZone.Service.Shared.Abstractions.Messaging;
+using IoT.SmartZone.Service.Shared.Abstractions.Modules;
 using IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Contexts;
-using Modular.Abstractions.Commands;
-using Modular.Abstractions.Messaging;
-using Modular.Abstractions.Modules;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Modules;
 

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+using IoT.SmartZone.Service.Shared.Abstractions.Queries;
 using IoT.SmartZone.Service.Shared.Infrastucture;
 using IoT.SmartZone.Service.Shared.Infrastucture.Queries.Decorators;
 using Microsoft.Extensions.DependencyInjection;
-using Modular.Abstractions.Queries;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Queries;
 

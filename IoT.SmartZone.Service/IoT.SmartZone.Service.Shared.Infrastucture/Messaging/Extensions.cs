@@ -1,16 +1,15 @@
-﻿using IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Brokers;
+﻿using IoT.SmartZone.Service.Shared.Abstractions.Messaging;
+using IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Brokers;
 using IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Contexts;
 using IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Dispatchers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Modular.Abstractions.Messaging;
-using Modular.Infrastructure;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging;
 
 public static class Extensions
 {
-    private const string SectionName = "messaging";
+    private const string _sectionName = "messaging";
 
     public static IServiceCollection AddMessaging(this IServiceCollection services, IConfiguration configuration)
     {
@@ -20,7 +19,7 @@ public static class Extensions
         services.AddSingleton<IMessageContextProvider, MessageContextProvider>();
         services.AddSingleton<IMessageContextRegistry, MessageContextRegistry>();
 
-        var section = configuration.GetSection(SectionName);
+        var section = configuration.GetSection(_sectionName);
         var messagingOptions = section.GetOptions<MessagingOptions>();
         services.Configure<MessagingOptions>(section);
 

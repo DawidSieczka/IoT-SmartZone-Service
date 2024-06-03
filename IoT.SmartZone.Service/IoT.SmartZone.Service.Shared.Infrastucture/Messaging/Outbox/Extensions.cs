@@ -1,18 +1,17 @@
-using IoT.SmartZone.Service.Shared.Infrastucture;
+using IoT.SmartZone.Service.Shared.Abstractions.Events;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Modular.Abstractions.Events;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Messaging.Outbox;
 
 public static class Extensions
 {
-    private const string SectionName = "outbox";
+    private const string _sectionName = "outbox";
 
     public static IServiceCollection AddOutbox<T>(this IServiceCollection services, IConfiguration configuration) where T : DbContext
     {
-        var outboxOptions = configuration.GetOptions<OutboxOptions>(SectionName);
+        var outboxOptions = configuration.GetOptions<OutboxOptions>(_sectionName);
         if (!outboxOptions.Enabled)
         {
             return services;
@@ -32,7 +31,7 @@ public static class Extensions
 
     public static IServiceCollection AddOutbox(this IServiceCollection services, IConfiguration configuration)
     {
-        var section = configuration.GetSection(SectionName);
+        var section = configuration.GetSection(_sectionName);
         var outboxOptions = section.GetOptions<OutboxOptions>();
         services.Configure<OutboxOptions>(section);
         services.AddSingleton(new InboxTypeRegistry());

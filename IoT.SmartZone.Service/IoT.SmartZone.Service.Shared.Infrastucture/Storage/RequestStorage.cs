@@ -1,6 +1,6 @@
 using System;
+using IoT.SmartZone.Service.Shared.Abstractions.Storage;
 using Microsoft.Extensions.Caching.Memory;
-using Modular.Abstractions.Storage;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Storage;
 
