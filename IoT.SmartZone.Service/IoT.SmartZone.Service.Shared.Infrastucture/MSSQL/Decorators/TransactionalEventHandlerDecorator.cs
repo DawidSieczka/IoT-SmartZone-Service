@@ -3,11 +3,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Humanizer;
 using IoT.SmartZone.Service.Shared.Abstractions.Events;
-using IoT.SmartZone.Service.Shared.Infrastucture.Postgres;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace IoT.SmartZone.Service.Shared.Infrastucture.Postgres.Decorators;
+namespace IoT.SmartZone.Service.Shared.Infrastucture.MSSQL.Decorators;
 
 [Decorator]
 public class TransactionalEventHandlerDecorator<T> : IEventHandler<T> where T : class, IEvent

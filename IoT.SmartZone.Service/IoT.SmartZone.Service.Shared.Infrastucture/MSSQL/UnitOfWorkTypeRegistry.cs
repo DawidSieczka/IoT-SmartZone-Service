@@ -1,8 +1,7 @@
-﻿using IoT.SmartZone.Service.Shared.Infrastucture;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
-namespace IoT.SmartZone.Service.Shared.Infrastucture.Postgres;
+namespace IoT.SmartZone.Service.Shared.Infrastucture.MSSQL;
 
 public class UnitOfWorkTypeRegistry
 {

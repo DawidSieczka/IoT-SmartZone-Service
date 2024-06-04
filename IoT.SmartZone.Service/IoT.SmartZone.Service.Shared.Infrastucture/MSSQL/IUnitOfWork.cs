@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace IoT.SmartZone.Service.Shared.Infrastucture.Postgres;
+namespace IoT.SmartZone.Service.Shared.Infrastucture.MSSQL;
 
 public interface IUnitOfWork
 {

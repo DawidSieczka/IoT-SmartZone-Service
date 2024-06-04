@@ -2,13 +2,13 @@
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
-namespace IoT.SmartZone.Service.Shared.Infrastucture.Postgres;
+namespace IoT.SmartZone.Service.Shared.Infrastucture.MSSQL;
 
-public abstract class PostgresUnitOfWork<T> : IUnitOfWork where T : DbContext
+public abstract class MSSQLUnitOfWork<T> : IUnitOfWork where T : DbContext
 {
     private readonly T _dbContext;
 
-    protected PostgresUnitOfWork(T dbContext)
+    protected MSSQLUnitOfWork(T dbContext)
     {
         _dbContext = dbContext;
     }

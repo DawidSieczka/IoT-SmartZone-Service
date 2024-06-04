@@ -1,12 +1,12 @@
 ﻿using IoT.SmartZone.Service.Shared.Abstractions.Commands;
 using IoT.SmartZone.Service.Shared.Abstractions.Events;
 using IoT.SmartZone.Service.Shared.Abstractions.Queries;
-using IoT.SmartZone.Service.Shared.Infrastucture.Postgres.Decorators;
+using IoT.SmartZone.Service.Shared.Infrastucture.MSSQL.Decorators;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IoT.SmartZone.Service.Shared.Infrastucture.Postgres;
+namespace IoT.SmartZone.Service.Shared.Infrastucture.MSSQL;
 
 public static class Extensions
 {
@@ -58,10 +58,10 @@ public static class Extensions
         return await data.Skip((page - 1) * results).Take(results).ToListAsync(cancellationToken);
     }
 
-    public static IServiceCollection AddPostgres(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddMSSQL(this IServiceCollection services, IConfiguration configuration)
     {
-        var section = configuration.GetSection("postgres");
-        services.Configure<PostgresOptions>(section);
+        var section = configuration.GetSection("SqlServer");
+        services.Configure<MSSQLOptions>(section);
         services.AddSingleton(new UnitOfWorkTypeRegistry());
 
         return services;
@@ -75,10 +75,12 @@ public static class Extensions
         return services;
     }
 
-    public static IServiceCollection AddPostgres<T>(this IServiceCollection services, IConfiguration configuration) where T : DbContext
+    public static IServiceCollection AddMSSQL<T>(this IServiceCollection services, IConfiguration configuration) where T : DbContext
     {
-        var options = configuration.GetOptions<PostgresOptions>("postgres");
-        services.AddDbContext<T>(x => x.UseNpgsql(options.ConnectionString));
+        var mssqlOptions = configuration.GetOptions<MSSQLOptions>("SqlServer");
+        services.AddDbContext<T>(x => x.UseLazyLoadingProxies()
+            .UseSqlServer(mssqlOptions.ConnectionString, options => options.CommandTimeout(120)
+            .EnableRetryOnFailure(3, TimeSpan.FromSeconds(3), null)));
 
         return services;
     }

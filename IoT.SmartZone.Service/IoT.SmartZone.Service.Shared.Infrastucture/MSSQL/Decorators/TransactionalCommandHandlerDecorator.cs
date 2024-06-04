@@ -3,7 +3,7 @@ using IoT.SmartZone.Service.Shared.Abstractions.Commands;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace IoT.SmartZone.Service.Shared.Infrastucture.Postgres.Decorators;
+namespace IoT.SmartZone.Service.Shared.Infrastucture.MSSQL.Decorators;
 
 [Decorator]
 public class TransactionalCommandHandlerDecorator<T> : ICommandHandler<T> where T : class, ICommand
