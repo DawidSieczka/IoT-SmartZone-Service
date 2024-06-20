@@ -26,6 +26,7 @@ public static class Extensions
         var options = authSection.GetOptions<AuthOptions>();
         services.Configure<AuthOptions>(authSection);
         services.Configure<AuthOptions.CookieOptions>(cookieSection);
+
         services.AddSingleton<IAuthManager, AuthManager>();
 
         if (options.AuthenticationDisabled)

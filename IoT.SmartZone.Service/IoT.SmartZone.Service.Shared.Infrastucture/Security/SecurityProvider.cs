@@ -1,5 +1,6 @@
 using System.Text.Encodings.Web;
 using IoT.SmartZone.Service.Shared.Infrastucture.Security.Encryption;
+using Microsoft.Extensions.Options;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Security;
 
@@ -13,14 +14,14 @@ public sealed class SecurityProvider : ISecurityProvider
     private readonly string _key;
 
     public SecurityProvider(IEncryptor encryptor, IHasher hasher,
-        IRng rng, UrlEncoder urlEncoder, SecurityOptions securityOptions)
+        IRng rng, UrlEncoder urlEncoder, IOptions<SecurityOptions> securityOptions)
     {
         _encryptor = encryptor;
         _hasher = hasher;
         _rng = rng;
         _urlEncoder = urlEncoder;
-        _securityOptions = securityOptions;
-        _key = securityOptions.Encryption.Key;
+        _securityOptions = securityOptions.Value;
+        _key = securityOptions.Value.Encryption.Key;
     }
 
     public string Encrypt(string data)

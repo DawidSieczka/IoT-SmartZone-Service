@@ -1,19 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-	  <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.1" />
-
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IoT.SmartZone.Service.Modules.Users.Api\IoT.SmartZone.Service.Modules.Users.Api.csproj" />
     <ProjectReference Include="..\IoT.SmartZone.Service.Shared.Abstractions\IoT.SmartZone.Service.Shared.Abstractions.csproj" />
     <ProjectReference Include="..\IoT.SmartZone.Service.Shared.Infrastucture\IoT.SmartZone.Service.Shared.Infrastucture.csproj" />
   </ItemGroup>

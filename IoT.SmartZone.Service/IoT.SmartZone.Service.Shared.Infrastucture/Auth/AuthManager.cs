@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using IoT.SmartZone.Service.Shared.Abstractions.Auth;
 using IoT.SmartZone.Service.Shared.Abstractions.Time;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture.Auth;
@@ -15,18 +16,18 @@ public sealed class AuthManager : IAuthManager
     private readonly SigningCredentials _signingCredentials;
     private readonly string _issuer;
 
-    public AuthManager(AuthOptions options, IClock clock)
+    public AuthManager(IOptions<AuthOptions> options, IClock clock)
     {
-        var issuerSigningKey = options.IssuerSigningKey;
+        var issuerSigningKey = options.Value.IssuerSigningKey;
         if (issuerSigningKey is null)
         {
             throw new InvalidOperationException("Issuer signing key not set.");
         }
 
-        _options = options;
+        _options = options.Value;
         _clock = clock;
-        _signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.IssuerSigningKey)), SecurityAlgorithms.HmacSha256);
-        _issuer = options.Issuer;
+        _signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(options.Value.IssuerSigningKey)), SecurityAlgorithms.HmacSha256);
+        _issuer = options.Value.Issuer;
     }
 
     public JsonWebToken CreateToken(Guid userId, string role = null, string audience = null,

@@ -22,6 +22,8 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddModularInfrastructure(_configuration, _assemblies, _modules);
+        services.AddContracts();
+
         foreach (var module in _modules)
         {
             module.Register(services);
@@ -44,6 +46,8 @@ public class Startup
             endpoints.MapGet("/", context => context.Response.WriteAsync("IoT SmartZone Service Api"));
             endpoints.MapModuleInfo();
         });
+
+        app.UseSwagger();
 
         _assemblies.Clear();
         _modules.Clear();

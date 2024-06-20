@@ -3,27 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Api", "IoT.SmartZone.Service.Api\IoT.SmartZone.Service.Api.csproj", "{E3E6BF49-BAA1-49F8-BFC6-D37C402F9C02}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Application", "IoT.SmartZone.Service.Application\IoT.SmartZone.Service.Application.csproj", "{B2767625-8435-4365-A215-495A8C9A1BBF}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Infrastructure", "IoT.SmartZone.Service.Infrastructure\IoT.SmartZone.Service.Infrastructure.csproj", "{3E71332F-B0F5-41D1-BE50-C3D93671327C}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Domain", "IoT.SmartZone.Service.Domain\IoT.SmartZone.Service.Domain.csproj", "{BC82FECA-B7B4-4D8E-8BD2-2F2550E1BA0C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{94129528-4AF9-41F3-A735-0846C0695091}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.UnitTests", "Tests\IoT.SmartZone.Service.UnitTests\IoT.SmartZone.Service.UnitTests.csproj", "{55BD04A2-FECA-4A56-B694-AEAEC800B485}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstraper", "Bootstraper", "{973562BE-6AF6-4B6E-851E-BE7FFB24BFAB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.SmartZone.Service.Bootsrapper", "IoT.SmartZone.Service.Bootsrapper\IoT.SmartZone.Service.Bootsrapper.csproj", "{08D3EDB7-02BD-4309-BA03-1EB4CF598156}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Bootsrapper", "IoT.SmartZone.Service.Bootsrapper\IoT.SmartZone.Service.Bootsrapper.csproj", "{08D3EDB7-02BD-4309-BA03-1EB4CF598156}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{4B20C550-738D-4153-A97D-1AEC630D20D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.SmartZone.Service.Shared.Abstractions", "IoT.SmartZone.Service.Shared.Abstractions\IoT.SmartZone.Service.Shared.Abstractions.csproj", "{15CABCC9-85D9-486F-B612-08FB008E2940}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Shared.Abstractions", "IoT.SmartZone.Service.Shared.Abstractions\IoT.SmartZone.Service.Shared.Abstractions.csproj", "{15CABCC9-85D9-486F-B612-08FB008E2940}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.SmartZone.Service.Shared.Infrastucture", "IoT.SmartZone.Service.Shared.Infrastucture\IoT.SmartZone.Service.Shared.Infrastucture.csproj", "{CA7119BC-2CD3-41FC-9E43-9522C0A4F092}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Shared.Infrastucture", "IoT.SmartZone.Service.Shared.Infrastucture\IoT.SmartZone.Service.Shared.Infrastucture.csproj", "{CA7119BC-2CD3-41FC-9E43-9522C0A4F092}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{3A677628-39A8-4CAF-B993-C986588ECF5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Users", "Users", "{AD1D21B4-61E5-44C4-B214-F82B8117E8A9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Modules.Users.Core", "IoT.SmartZone.Service.Modules.Users.Core\IoT.SmartZone.Service.Modules.Users.Core.csproj", "{7FCD62CF-45E0-412F-ACF2-4FD9DDCF3C20}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Modules.Users.Api", "IoT.SmartZone.Service.Modules.Users.Api\IoT.SmartZone.Service.Modules.Users.Api.csproj", "{B5BA53C8-18E4-48C1-A5EE-46EAE65B88FD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,22 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E3E6BF49-BAA1-49F8-BFC6-D37C402F9C02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3E6BF49-BAA1-49F8-BFC6-D37C402F9C02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3E6BF49-BAA1-49F8-BFC6-D37C402F9C02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3E6BF49-BAA1-49F8-BFC6-D37C402F9C02}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B2767625-8435-4365-A215-495A8C9A1BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B2767625-8435-4365-A215-495A8C9A1BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B2767625-8435-4365-A215-495A8C9A1BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B2767625-8435-4365-A215-495A8C9A1BBF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E71332F-B0F5-41D1-BE50-C3D93671327C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E71332F-B0F5-41D1-BE50-C3D93671327C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E71332F-B0F5-41D1-BE50-C3D93671327C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E71332F-B0F5-41D1-BE50-C3D93671327C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC82FECA-B7B4-4D8E-8BD2-2F2550E1BA0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC82FECA-B7B4-4D8E-8BD2-2F2550E1BA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BC82FECA-B7B4-4D8E-8BD2-2F2550E1BA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BC82FECA-B7B4-4D8E-8BD2-2F2550E1BA0C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +47,14 @@ Global
 		{CA7119BC-2CD3-41FC-9E43-9522C0A4F092}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA7119BC-2CD3-41FC-9E43-9522C0A4F092}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA7119BC-2CD3-41FC-9E43-9522C0A4F092}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FCD62CF-45E0-412F-ACF2-4FD9DDCF3C20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FCD62CF-45E0-412F-ACF2-4FD9DDCF3C20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FCD62CF-45E0-412F-ACF2-4FD9DDCF3C20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FCD62CF-45E0-412F-ACF2-4FD9DDCF3C20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5BA53C8-18E4-48C1-A5EE-46EAE65B88FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5BA53C8-18E4-48C1-A5EE-46EAE65B88FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5BA53C8-18E4-48C1-A5EE-46EAE65B88FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5BA53C8-18E4-48C1-A5EE-46EAE65B88FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +64,9 @@ Global
 		{08D3EDB7-02BD-4309-BA03-1EB4CF598156} = {973562BE-6AF6-4B6E-851E-BE7FFB24BFAB}
 		{15CABCC9-85D9-486F-B612-08FB008E2940} = {4B20C550-738D-4153-A97D-1AEC630D20D2}
 		{CA7119BC-2CD3-41FC-9E43-9522C0A4F092} = {4B20C550-738D-4153-A97D-1AEC630D20D2}
+		{AD1D21B4-61E5-44C4-B214-F82B8117E8A9} = {3A677628-39A8-4CAF-B993-C986588ECF5D}
+		{7FCD62CF-45E0-412F-ACF2-4FD9DDCF3C20} = {AD1D21B4-61E5-44C4-B214-F82B8117E8A9}
+		{B5BA53C8-18E4-48C1-A5EE-46EAE65B88FD} = {AD1D21B4-61E5-44C4-B214-F82B8117E8A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9BC18D0-2D5A-413D-9073-CAF1D7372471}
