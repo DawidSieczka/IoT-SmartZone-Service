@@ -1,22 +1,21 @@
-﻿using IoT.SmartZone.Service.Modules.Users.Core.Queries;
+﻿using IoT.SmartZone.Service.Modules.Users.Core.Commands.SignUp;
+using IoT.SmartZone.Service.Modules.Users.Core.Queries;
+using IoT.SmartZone.Service.Shared.Abstractions.Contexts;
 using IoT.SmartZone.Service.Shared.Abstractions.Dispatchers;
-using IoT.SmartZone.Service.Shared.Infrastucture.Api;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace IoT.SmartZone.Service.Modules.Users.Api.Controllers;
-[ApiController]
-[Route("[controller]")]
+
 [Authorize(_policy)]
-[ProducesDefaultContentType]
-public class UsersController : ControllerBase
+public class UsersController : ApiController
 {
     private const string _policy = "users";
     private readonly IDispatcher _dispatcher;
 
-    public UsersController(IDispatcher dispatcher)
+    public UsersController(IDispatcher dispatcher) 
     {
         _dispatcher = dispatcher;
     }

@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34916.146
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{94129528-4AF9-41F3-A735-0846C0695091}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.UnitTests", "Tests\IoT.SmartZone.Service.UnitTests\IoT.SmartZone.Service.UnitTests.csproj", "{55BD04A2-FECA-4A56-B694-AEAEC800B485}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstraper", "Bootstraper", "{973562BE-6AF6-4B6E-851E-BE7FFB24BFAB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Bootsrapper", "IoT.SmartZone.Service.Bootsrapper\IoT.SmartZone.Service.Bootsrapper.csproj", "{08D3EDB7-02BD-4309-BA03-1EB4CF598156}"
@@ -25,16 +21,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Modul
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Modules.Users.Api", "IoT.SmartZone.Service.Modules.Users.Api\IoT.SmartZone.Service.Modules.Users.Api.csproj", "{B5BA53C8-18E4-48C1-A5EE-46EAE65B88FD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.SmartZone.Service.Modules.Users.Infrastructure", "IoT.SmartZone.Service.Modules.Users.Infrastructure\IoT.SmartZone.Service.Modules.Users.Infrastructure.csproj", "{FDFF190E-BF99-42DE-88D3-187826E7E310}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{77F4855D-EC19-4EE5-935A-79F1D97DD3E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55BD04A2-FECA-4A56-B694-AEAEC800B485}.Release|Any CPU.Build.0 = Release|Any CPU
 		{08D3EDB7-02BD-4309-BA03-1EB4CF598156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{08D3EDB7-02BD-4309-BA03-1EB4CF598156}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08D3EDB7-02BD-4309-BA03-1EB4CF598156}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -55,18 +51,26 @@ Global
 		{B5BA53C8-18E4-48C1-A5EE-46EAE65B88FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5BA53C8-18E4-48C1-A5EE-46EAE65B88FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5BA53C8-18E4-48C1-A5EE-46EAE65B88FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDFF190E-BF99-42DE-88D3-187826E7E310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDFF190E-BF99-42DE-88D3-187826E7E310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDFF190E-BF99-42DE-88D3-187826E7E310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDFF190E-BF99-42DE-88D3-187826E7E310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77F4855D-EC19-4EE5-935A-79F1D97DD3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77F4855D-EC19-4EE5-935A-79F1D97DD3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77F4855D-EC19-4EE5-935A-79F1D97DD3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77F4855D-EC19-4EE5-935A-79F1D97DD3E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{55BD04A2-FECA-4A56-B694-AEAEC800B485} = {94129528-4AF9-41F3-A735-0846C0695091}
 		{08D3EDB7-02BD-4309-BA03-1EB4CF598156} = {973562BE-6AF6-4B6E-851E-BE7FFB24BFAB}
 		{15CABCC9-85D9-486F-B612-08FB008E2940} = {4B20C550-738D-4153-A97D-1AEC630D20D2}
 		{CA7119BC-2CD3-41FC-9E43-9522C0A4F092} = {4B20C550-738D-4153-A97D-1AEC630D20D2}
 		{AD1D21B4-61E5-44C4-B214-F82B8117E8A9} = {3A677628-39A8-4CAF-B993-C986588ECF5D}
 		{7FCD62CF-45E0-412F-ACF2-4FD9DDCF3C20} = {AD1D21B4-61E5-44C4-B214-F82B8117E8A9}
 		{B5BA53C8-18E4-48C1-A5EE-46EAE65B88FD} = {AD1D21B4-61E5-44C4-B214-F82B8117E8A9}
+		{FDFF190E-BF99-42DE-88D3-187826E7E310} = {AD1D21B4-61E5-44C4-B214-F82B8117E8A9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D9BC18D0-2D5A-413D-9073-CAF1D7372471}

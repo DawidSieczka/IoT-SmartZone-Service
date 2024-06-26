@@ -3,6 +3,10 @@ using IoT.SmartZone.Service.Shared.Infrastucture.Modules;
 using IoT.SmartZone.Service.Shared.Infrastucture;
 using IoT.SmartZone.Service.Shared.Infrastucture.Contracts;
 using System.Reflection;
+using Microsoft.AspNetCore.Http.HttpResults;
+using IoT.SmartZone.Service.Modules.Users.Infrastructure;
+using IoT.SmartZone.Service.Modules.Users.Infrastructure.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace IoT.SmartZone.Service.Bootsrapper;
 
@@ -45,10 +49,11 @@ public class Startup
             endpoints.MapControllers();
             endpoints.MapGet("/", context => context.Response.WriteAsync("IoT SmartZone Service Api"));
             endpoints.MapModuleInfo();
+            
         });
 
         app.UseSwagger();
-
+        
         _assemblies.Clear();
         _modules.Clear();
     }

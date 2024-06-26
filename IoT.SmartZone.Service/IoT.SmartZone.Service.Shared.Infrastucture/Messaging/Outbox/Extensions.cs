@@ -9,9 +9,9 @@ public static class Extensions
 {
     private const string _sectionName = "outbox";
 
-    public static IServiceCollection AddOutbox<T>(this IServiceCollection services, IConfiguration configuration) where T : DbContext
+    public static IServiceCollection AddOutbox<T>(this IServiceCollection services) where T : DbContext
     {
-        var outboxOptions = configuration.GetOptions<OutboxOptions>(_sectionName);
+        var outboxOptions = services.GetOptions<OutboxOptions>(_sectionName);
         if (!outboxOptions.Enabled)
         {
             return services;

@@ -21,6 +21,7 @@ using IoT.SmartZone.Service.Shared.Infrastucture.Security;
 using IoT.SmartZone.Service.Shared.Infrastucture.Serialization;
 using IoT.SmartZone.Service.Shared.Infrastucture.Storage;
 using IoT.SmartZone.Service.Shared.Infrastucture.Time;
+using IoT.SmartZone.Service.Shared.Infrastucture.DataProvider;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -29,6 +30,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using IoT.SmartZone.Service.Shared.Infrastucture.Postgres;
+using IoT.SmartZone.Service.Shared.Infrastucture.Services;
 
 namespace IoT.SmartZone.Service.Shared.Infrastucture;
 
@@ -94,6 +97,7 @@ public static class Extensions
         var appInfo = new AppInfo(appOptions.Name, appOptions.Version);
         services.AddSingleton(appInfo);
 
+        services.AddHandlerDataProviders();
         services.AddMemoryCache();
         services.AddHttpClient();
         services.AddSingleton<IRequestStorage, RequestStorage>();
@@ -111,6 +115,8 @@ public static class Extensions
         services.AddMessaging(configuration);
         services.AddSecurity(configuration);
         services.AddOutbox(configuration);
+        services.AddPostgres();
+        services.AddHostedService<DbContextAppInitializer>();
         services.AddSingleton<IClock, UtcClock>();
         services.AddSingleton<IDispatcher, InMemoryDispatcher>();
         services.AddControllers()
